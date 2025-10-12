@@ -1,0 +1,116 @@
+{
+  "Products": [
+    {
+      "Id": 1,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "701.00",
+      "ProductsImage": "/public/images/products/Product-01.png"
+    },
+    {
+      "Id": 2,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "451.00",
+      "ProductsImage": "/public/images/products/Product-02.png"
+    },
+    {
+      "Id": 3,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "200.00",
+      "ProductsImage": "/public/images/products/Product-03.png"
+    },
+    {
+      "Id": 4,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "436.00",
+      "ProductsImage": "/public/images/products/Product-04.png"
+    },
+    {
+      "Id": 5,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "137.00",
+      "ProductsImage": "/public/images/products/Product-05.png"
+    },
+    {
+      "Id": 6,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "607.00",
+      "ProductsImage": "/public/images/products/Product-06.png"
+    },
+    {
+      "Id": 7,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "535.00",
+      "ProductsImage": "/public/images/products/Product-07.png"
+    },
+    {
+      "Id": 8,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "645.00",
+      "ProductsImage": "/public/images/products/Product-08.png"
+    },
+    {
+      "Id": 9,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "195.00",
+      "ProductsImage": "/public/images/products/Product-09.png"
+    },
+    {
+      "Id": 10,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "5.00",
+      "ProductsImage": "/public/images/products/Product-10.png"
+    },
+    {
+      "Id": 11,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "6585.00",
+      "ProductsImage": "/public/images/products/Product-11.png"
+    },
+    {
+      "Id": 12,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "85.00",
+      "ProductsImage": "/public/images/products/Product-12.png"
+    },
+    {
+      "Id": 13,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "1985.00",
+      "ProductsImage": "/public/images/products/Product-13.png"
+    },
+    {
+      "Id": 14,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "685.00",
+      "ProductsImage": "/public/images/products/Product-14.png"
+    },
+    {
+      "Id": 15,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "225.00",
+      "ProductsImage": "/public/images/products/Product-15.png"
+    },
+    {
+      "Id": 16,
+      "Name": "Wireless Audio System Multiroom 360 degree",
+      "Category": "Speakers",
+      "Price": "455.00",
+      "ProductsImage": "/public/images/products/Product-16.png"
+    }
+  ]
+}
