@@ -7,6 +7,8 @@ import {
   AiOutlinePhone,
   AiOutlineFire,
   AiOutlineShoppingCart,
+  AiOutlineMenu,
+  AiOutlineClose,
 } from "react-icons/ai";
 import { Link } from "react-router";
 
@@ -140,6 +142,105 @@ const Nav = () => {
             </div>
           </Link>
         </div>
+      </div>
+      {/* Bottom Bar */}
+      <div
+        className={`container w-full px-[5%] lg:px-[12%] py-6 flex justify-between items-center gap-6 transition-all duration-500 mt-3 ${
+          menuOpen ? "h-auto" : ""
+        }`}
+      >
+        <div className="relative w-1/5 hide">
+          <div
+            className="flex items-center justify-between cursor-pointer"
+            onClick={() => setOpen(!open)}
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-xl">
+                <AiOutlineMenu />
+              </span>
+              <span className="font-bold">Shop Categories</span>
+            </div>
+          </div>
+          {open && (
+            <ul className="absolute top-full left-0 bg-white shadow-md rounded-md overflow-hidden mt-2 w-full z-40 transition-all duration-300">
+              {categories.map(([lable, icon], i) => (
+                <a
+                  href="#"
+                  key={i}
+                  className="flex items-center gap-3 px-4 py-2 border-b last:border-none border-gray-300 hover:bg-gray-100"
+                >
+                  <span>{lable}</span>
+                </a>
+              ))}
+            </ul>
+          )}
+        </div>
+        <ul className="flex gap-10 w-2/5 nav-menu font-bold">
+          <li>
+            <Link to="/" className="hover:text-yellow-500 text-xl transition">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="hover:text-yellow-500 text-xl transition"
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/shop"
+              className="hover:text-yellow-500 text-xl transition"
+            >
+              Shop
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/blog"
+              className="hover:text-yellow-500 text-xl transition"
+            >
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/faq"
+              className="hover:text-yellow-500 text-xl transition"
+            >
+              Faq
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="hover:text-yellow-500 text-xl transition"
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
+        <Link to="/wishlist" className="flex items-center gap-3 hide">
+          <span className="text-2xl text-gray-600 ">
+            <AiOutlineFire />
+          </span>
+          <div className="flex items-cente gap-2">
+            <span className="font-bold text-sm">Today's Deal</span>
+            <span className="bg-red-600 text-white text-xs px-2 pt-1 rounded-sm uppercase relative">
+              hot
+            </span>
+          </div>
+        </Link>
+        {menuOpen && (
+          <span
+            onClick={toggleMenu}
+            className="text-2xl absolute top-4 right-4 cursor-pointer"
+          >
+            <AiOutlineClose />
+          </span>
+        )}
       </div>
     </nav>
   );
