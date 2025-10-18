@@ -10,6 +10,15 @@ import {
   AiOutlineMenu,
   AiOutlineClose,
 } from "react-icons/ai";
+import {
+  FcPhoneAndroid,
+  FcFrame,
+  FcCamera,
+  FcHeadset,
+  FcIpad,
+  FcSelfServiceKiosk,
+} from "react-icons/fc";
+
 import { Link } from "react-router";
 
 const Nav = () => {
@@ -19,13 +28,12 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
 
   const categories = [
-    ["Smartphone"],
-    ["Laptop"],
-    ["Camera"],
-    ["Headpgones"],
-    ["Pc Gaming"],
-    ["Tablets"],
-    ["Television"],
+    ["Smartphone", <FcPhoneAndroid />],
+    ["Laptop", <FcFrame />],
+    ["Camera", <FcCamera />],
+    ["Headphones", <FcHeadset />],
+    ["Tablets", <FcIpad />],
+    ["Television", <FcSelfServiceKiosk />],
   ];
   return (
     <nav className="w-full flex flex-col justify-center items-center relative">
@@ -84,7 +92,7 @@ const Nav = () => {
         </ul>
       </div>
       {/* Middle Nav */}
-      <div className="middle-nav container mt-2 w-full flex justify-between items-center px-[5%] lg:px-[12%] py-6 gap-10">
+      <div className="middle-nav container mt-2 w-full flex justify-between items-center py-6 gap-10">
         <div className="w-1/5">
           <Link to="/">
             <h2 className="text-5xl font-bricolage text-black font-bold">
@@ -145,7 +153,7 @@ const Nav = () => {
       </div>
       {/* Bottom Bar */}
       <div
-        className={`container w-full px-[5%] lg:px-[12%] py-6 flex justify-between items-center gap-6 transition-all duration-500 mt-3 ${
+        className={`container w-full  py-6 flex justify-between items-center gap-6 transition-all duration-500 mt-3 ${
           menuOpen ? "h-auto" : ""
         }`}
       >
@@ -167,8 +175,9 @@ const Nav = () => {
                 <a
                   href="#"
                   key={i}
-                  className="flex items-center gap-3 px-4 py-2 border-b last:border-none border-gray-300 hover:bg-gray-100"
+                  className="flex items-center gap-3 px-4 py-2 border-b last:border-none border-gray-300 hover:bg-gray-100 transition ease-in-out duration-300"
                 >
+                  <span className="ml-3">{icon}</span>
                   <span>{lable}</span>
                 </a>
               ))}
