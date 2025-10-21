@@ -140,7 +140,7 @@ const Nav = () => {
               <span className="text-yellow-600 font-bold">Wishlist</span>
             </div>
           </Link>
-          <Link to="/wishlist" className="flex gap-2 items-center">
+          <Link to="/cart" className="flex gap-2 items-center">
             <span className="text-3xl text-gray-500">
               <AiOutlineShoppingCart />
             </span>
