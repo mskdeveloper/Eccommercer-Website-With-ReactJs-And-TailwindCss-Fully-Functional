@@ -4,6 +4,7 @@ import Nav from "./components/nav/Nav";
 import Index from "./components/Pages";
 import ProductDetails from "./components/Pages/ProductDetails";
 import Cart from "./components/Pages/Cart";
+import Wishlist from "./components/Pages/wishlist";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
       </Router>
     </>
