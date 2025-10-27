@@ -10,14 +10,18 @@ const Cart = () => {
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const fixedCart = storedCart.map((item) => ({
-      ...item,
-      price: parseFloat(item.price),
-      quantity: item.quantity || 1,
-    }));
+    const fixedCart = storedCart.map((item) => {
+      const raw = item.price ?? item.Price ?? 0;
+      const price = parseFloat(String(raw).replace(/[^0-9.-]+/g, "")) || 0;
+      return {
+        ...item,
+        price,
+        quantity: item.quantity ?? item.Quantity ?? 1,
+        Id: item.Id ?? item.id,
+      };
+    });
     setCart(fixedCart);
   }, []);
-
   const updateQuantity = (id, delta) => {
     const updatedCart = cart.map((item) => {
       if (item.Id === id) {
@@ -204,6 +208,37 @@ const Cart = () => {
               Apply Coupon
             </button>
           </div>
+        </div>
+        {/* Cart Totals */}
+        <div className="mt-12 md:w-1/3 ml-auto border rounded-lg p-6 shadow bg-white">
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">
+            Cart Totals
+          </h3>
+
+          <div className="flex justify-between mb-2">
+            <span className="text-gray-600">Subtotal</span>
+            <span className="font-medium">${subTotal.toFixed(2)}</span>
+          </div>
+          {discount > 0 && (
+            <div className="flex justify-between mb-2 text-green-600 font-medium">
+              <span className="text-gray-600">Discount ({discount}%)</span>
+              <span className="font-medium">-${discountAmount.toFixed(2)}</span>
+            </div>
+          )}
+          <div className="flex justify-between mb-2">
+            <span className="text-gray-600">Shipping</span>
+            <span className="font-medium">${shipping.toFixed(2)}</span>
+          </div>
+          <div className="flex justify-between mb-2 font-bold text-xl border-t pt-4 mt-4">
+            <span className="text-gray-800">Total</span>
+            <span className="font-semibold">${total.toFixed(2)}</span>
+          </div>
+          <button
+            onClick={handlePlaceOrder}
+            className="mt-6 w-full py-3 rounded-full bg-yellow-400 hover:bg-yellow-500 text-white font-semibold transition"
+          >
+            Place Order
+          </button>
         </div>
       </div>
     </>
