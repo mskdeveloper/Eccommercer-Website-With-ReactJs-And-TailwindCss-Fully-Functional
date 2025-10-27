@@ -144,6 +144,44 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
+        {/* Mobile Card View */}
+        <div className="md:hidden space-y-6">
+          {cart.map((item) => (
+            <div
+              key={item.Id}
+              className="bg-white rounded-xl p-4 shadow border"
+            >
+              <div className="flex justify-between items-start">
+                <h3 className="text-lg font-semibold">{item.Name}</h3>
+                <button
+                  onClick={() => removeFromCart(item.Id)}
+                  className="text-xl text-gray-400 hover:text-red-500"
+                >
+                  <AiOutlineClose />
+                </button>
+              </div>
+              <img
+                src={item.ProductsImage}
+                alt={item.Name}
+                className="w-full h-40 rounded-xl object-contain"
+              />
+              <p className="text-sm text-gray-500">{item.Category}</p>
+              <p className="text-base font-medium text-gray-800 ">
+                Price: ${item.Price}
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center border rounded">
+                  <button onClick={() => updateQuantity(item.Id, -1)}>-</button>
+                  <span className="px-4 font-medium">{item.quantity}</span>
+                  <button onClick={() => updateQuantity(item.Id, 1)}>+</button>
+                </div>
+                <div className="font-semibold text-gray-800">
+                  Total: ${(item.Price * item.quantity).toFixed(2)}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
