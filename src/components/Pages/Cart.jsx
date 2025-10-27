@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { toast } from "react-toastify";
-import { AiOutlineClose, AiOutlineCoffee } from "react-icons/ai";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { AiOutlineClose } from "react-icons/ai";
 const Cart = () => {
   const [cart, setCart] = useState([]);
   const [couponCode, setCouponCode] = useState("");
@@ -42,7 +43,7 @@ const Cart = () => {
 
   const handleApplyCoupon = () => {
     const code = couponCode.trim().toLowerCase();
-    if (code === "freeship10") {
+    if (code === "freeship99") {
       setDiscount(10);
       toast.success("Coupon applied! You got a $10 discount.");
     } else {
@@ -70,6 +71,7 @@ const Cart = () => {
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 text-yellow-600 font-bricolage">
           My Shoping Cart
         </h1>
+        <ToastContainer position="top-right" autoClose={1500} />
         {/* Desktop View */}
         <div className="hidden md:block overflow-x-hidden">
           <table className="w-full text-left border-seperate border-spacing-y-6">
@@ -181,6 +183,27 @@ const Cart = () => {
               </div>
             </div>
           ))}
+        </div>
+        {/* Coupon section */}
+        <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="w-full md:w-1/2 flex">
+            <input
+              type="text"
+              placeholder="Coupon Code ..."
+              value={couponCode}
+              onChange={(e) => {
+                setCouponCode(e.target.value);
+              }}
+              className="border px-4 w-full rounded-l-md outline-none text-gray-700"
+            />
+
+            <button
+              onClick={handleApplyCoupon}
+              className="bg-gray-800 text-white px-6 py-2 rounded-r-md hover:bg-red-500 transition "
+            >
+              Apply Coupon
+            </button>
+          </div>
         </div>
       </div>
     </>
